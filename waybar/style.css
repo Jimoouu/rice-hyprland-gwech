@@ -1,0 +1,142 @@
+@define-color bar-bg rgba(0, 0, 0, 0.4);       /* Latar belakang bar hitam transparan (40%) */
+@define-color module-bg rgba(255, 255, 255, 0.2); /* Latar modul putih transparan tipis */
+@define-color text-main #ffffff;               /* Putih bersih untuk teks/ikon aktif */
+@define-color text-muted #a1a1aa;              /* Abu-abu terang untuk teks tidak aktif */
+@define-color hover-bg rgba(255, 255, 255, 0.2);  /* Efek putih saat di-hover */
+
+* {
+  font-family: "JetBrainsMono Nerd Font Propo", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  box-shadow: none;
+}
+
+/* Latar Belakang Utama Waybar */
+window#waybar {
+  background-color: @bar-bg;
+  color: @text-main;
+}
+
+/* ====== WORKSPACES (DIBUAT MENYATU DALAM SATU KAPSUL) ====== */
+#workspaces {
+  background: @module-bg;
+  border-radius: 100px; /* Bentuk kapsul penuh */
+  margin: 5px 8px;
+  padding: 2px;
+}
+
+#workspaces button {
+  padding: 2px 14px;
+  margin: 2px;
+  color: @text-muted;
+  border-radius: 100px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Animasi mulus */
+}
+
+#workspaces button.active {
+  background: @text-main;
+  color: #000000;
+  min-width: 35px; /* Sedikit memanjang saat aktif agar lebih dinamis */
+  font-weight: 800;
+}
+
+#workspaces button:hover {
+  background: @hover-bg;
+  color: @text-main;
+}
+
+#workspaces button.urgent {
+  background: rgba(255, 255, 255, 0.3);
+  color: #000000;
+}
+
+#tray {
+  background: @module-bg;
+  border-radius: 100px;
+  padding: 4px 16px;
+  margin: 5px 4px;
+}
+
+#tray > * {
+  margin: 0px 6px; 
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#custom-arch {
+    font-family: "Symbols Nerd Font", "JetBrainsMono Nerd Font";
+    color: #1793d1;      /* Warna biru khas Arch */
+    font-size: 18px;     /* Atur besar kecilnya logo */
+    padding-left: 12px;
+    padding-right: 8px;
+}
+
+/* ====== SELEKTOR MODUL (BENTUK KAPSUL TERPISAH) ====== */
+#submap,
+#battery,
+#bluetooth,
+#network,
+#cpu,
+#memory,
+#volume,
+#clock 
+
+{
+  background: @module-bg;
+  color: @text-main;
+  border-radius: 100px; /* Membulat penuh */
+  padding: 4px 16px;
+  margin: 5px 4px;
+}
+
+#submap {
+  background: @text-main;
+  color: #000000;
+}
+
+/* ====== SLIDER PULSEAUDIO (MENYATU DENGAN MODUL) ====== */
+#pulseaudio-slider {
+  background: @module-bg;
+  border-radius: 100px;
+  padding: 4px 16px;
+  margin: 5px 4px;
+}
+
+#pulseaudio-slider slider {
+  all: unset;
+  opacity: 0;
+}
+
+#pulseaudio-slider trough {
+  min-height: 4px;
+  min-width: 70px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.15); /* Rel slider putih pudar */
+}
+
+#pulseaudio-slider highlight {
+  border-radius: 10px;
+  background: @text-main; /* Isi slider putih solid */
+}
+
+/* ====== TOOLTIP ====== */
+tooltip {
+  background: rgba(15, 15, 15, 0.85); /* Hitam pekat transparan */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+tooltip label {
+  color: @text-main;
+  padding: 4px 8px;
+}
+
+#custom-arch {
+    font-family: 'JetBrainsMono NF';
+    color: #1793d1;
+    font-size: 18px;
+    padding: 0 10px;
+}
