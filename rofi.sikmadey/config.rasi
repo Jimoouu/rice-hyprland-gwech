@@ -1,0 +1,108 @@
+configuration {
+    modi: "drun";
+    show-icons: true;
+    display-drun: "󰍉";
+}
+
+* {
+    bg: rgba(0, 0, 0, 75%);
+    bg-alt: rgba(20, 20, 20, 85%);
+    fg: #ffffff;
+    accent: #ffffff;
+
+    background-color: @bg;
+    text-color: @fg;
+
+    font: "JetBrainsMono Nerd Font 12";
+}
+
+/***** Window *****/
+
+window {
+    transparency: "real";
+
+    location: center;
+    anchor: center;
+
+    width: 700px;
+
+    background-color: @bg;
+
+    border: 1px;
+    border-color: rgba(255,255,255,15%);
+
+    border-radius: 24px;
+
+    padding: 0px;
+}
+
+/***** Main Box *****/
+
+mainbox {
+    spacing: 15px;
+    padding: 25px;
+
+    background-color: transparent;
+
+    children: [inputbar, listview];
+}
+
+/***** Search Bar *****/
+
+inputbar {
+    spacing: 10px;
+
+    padding: 0px 0px 15px 0px;
+    margin: 0px 0px 10px 0px;
+
+    background-color: transparent;
+
+    border: 0px 0px 1px 0px;
+    border-color: rgba(255,255,255,100%);
+
+    children: [prompt, entry];
+}
+
+prompt {
+    background-color: transparent;
+    text-color: @fg;
+}
+
+entry {
+    background-color: transparent;
+    text-color: @fg;
+
+    placeholder: "Search...";
+    placeholder-color: rgba(255,255,255,40%);
+}
+
+/***** App List *****/
+
+listview {
+    columns: 1;
+    lines: 10;
+
+    spacing: 6px;
+
+    background-color: transparent;
+}
+
+element {
+    padding: 12px;
+
+    border-radius: 16px;
+
+    background-color: transparent;
+}
+
+element-text {
+    text-color: @fg;
+}
+
+/***** Selected Item *****/
+
+element selected.normal {
+    background-color: rgba(255,255,255,95%);
+    text-color: #000000;
+}
+
