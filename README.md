@@ -4,3 +4,4 @@ ricing hyprland terkece viral 2026 tahun baru ini
 Preview
 ![Preview](image/hyprland.jpg)
 ![Preview](image/arch.jpg)
+![Preview](image/btop.png)
